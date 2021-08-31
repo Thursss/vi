@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/home';
 import About from './pages/about';
 
-
 function Router() {
   return (
     <BrowserRouter>
