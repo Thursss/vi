@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-import Square from './Square';
+import Square from './square';
 
 interface historyProps {
   point: number;

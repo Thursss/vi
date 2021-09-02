@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "npx prettier --write src/ & npx prettier --check src/",
+    "lint": "npx prettier --write src/ && npx prettier --check src/",
     "prettier-watch": "npx onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
