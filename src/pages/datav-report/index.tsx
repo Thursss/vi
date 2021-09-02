@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Row, Col } from '../../z-ui/index';
+
 const StyleDashboard = styled.div`
   width: 100%;
   height: 100%;
@@ -8,12 +10,21 @@ const StyleDashboard = styled.div`
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow: auto;
+  .overview-wrapper {
+  }
 `;
 
 function DatavReport() {
   return (
     <StyleDashboard className="dashboard">
-      <h1>data-report</h1>
+      <div className="overview-wrapper">
+        <Row>
+          <Col span={6}>1</Col>
+          <Col span={6}>2</Col>
+          <Col span={6}>3</Col>
+          <Col span={6}>4</Col>
+        </Row>
+      </div>
     </StyleDashboard>
   );
 }
