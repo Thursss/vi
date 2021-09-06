@@ -9,7 +9,6 @@ interface RowProps {
 
 const Row: FC<RowProps> = (props) => {
   const { align = 'top', justify = 'start', gutter = 0, children } = props;
-  console.log(props);
 
   return <div className="z-row">{children}</div>;
 };

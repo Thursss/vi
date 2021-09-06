@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Row, Col, Card } from '../../z-ui/index';
+import Total from './component/Total';
 
 const StyleDashboard = styled.div`
   width: 100%;
@@ -19,12 +20,26 @@ function DatavReport() {
     <StyleDashboard className="dashboard">
       <div className="overview-wrapper">
         <Row>
-          <Col span={6}>
-            <Card>1</Card>
-          </Col>
-          <Col span={6}>2</Col>
-          <Col span={6}>3</Col>
-          <Col span={6}>4</Col>
+          {[{}, {}, {}, {}].map((item, i) => (
+            <Col key={i} span={6}>
+              <Card>
+                <Total
+                  title="累计销售额"
+                  value="¥ 52,344,571"
+                  total={
+                    <>
+                      昨日销售额
+                      <span data-v-e38c7be8="" className="emphasis">
+                        ¥ 30,000,000
+                      </span>
+                    </>
+                  }
+                >
+                  <span>chart</span>
+                </Total>
+              </Card>
+            </Col>
+          ))}
         </Row>
       </div>
     </StyleDashboard>
