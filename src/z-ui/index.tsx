@@ -1,5 +1,5 @@
-import Row from './Grid/row';
-import Col from './Grid/col';
 import './index.scss';
 
-export { Row, Col };
+export { default as Row } from './row';
+export { default as Col } from './col';
+export { default as Card } from './card';

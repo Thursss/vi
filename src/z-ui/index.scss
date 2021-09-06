@@ -1,17 +1,4 @@
 //布局
-.z-row {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.z-col {
-  position: relative;
-  max-width: 100%;
-  min-height: 1px;
-}
-
-.z-col-6 {
-  display: block;
-  flex: 0 0 25%;
-  max-width: 25%;
-}
+@import './grid/style';
+// 卡片
+@import './card/style';

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Row, Col } from '../../z-ui/index';
+import { Row, Col, Card } from '../../z-ui/index';
 
 const StyleDashboard = styled.div`
   width: 100%;
@@ -19,7 +19,9 @@ function DatavReport() {
     <StyleDashboard className="dashboard">
       <div className="overview-wrapper">
         <Row>
-          <Col span={6}>1</Col>
+          <Col span={6}>
+            <Card>1</Card>
+          </Col>
           <Col span={6}>2</Col>
           <Col span={6}>3</Col>
           <Col span={6}>4</Col>
