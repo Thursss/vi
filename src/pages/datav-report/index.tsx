@@ -1,8 +1,82 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Row, Col, Card } from '../../z-ui';
 
-import { Row, Col, Card } from '../../z-ui/index';
 import Total from './component/Total';
+import TotalNumber from './component/TotalNumber';
+
+function DatavReport() {
+  return (
+    <StyleDashboard className="dashboard">
+      <div className="overview-wrapper">
+        <Row>
+          <Col span={6}>
+            <Card>
+              <Total
+                title="累计销售额"
+                value="¥ 52,344,571"
+                total={
+                  <TotalNumber text="昨日销售额">¥ 30,000,000</TotalNumber>
+                }
+              >
+                <div className="chart">
+                  <TotalNumber text="日同比" label="up">
+                    37.01%
+                  </TotalNumber>
+                  <TotalNumber text="月同比" label="down">
+                    77.17%
+                  </TotalNumber>
+                </div>
+              </Total>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card>
+              <Total
+                title="累计订单量"
+                value="2,631,187"
+                total={<TotalNumber text="昨日订单量"> 20,000,000</TotalNumber>}
+              >
+                <span>chart</span>
+              </Total>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card>
+              <Total
+                title="今日交易用户数"
+                value="308,826"
+                total={<TotalNumber text="昨日订单量"> 20,000,000</TotalNumber>}
+              >
+                <span>chart</span>
+              </Total>
+            </Card>
+          </Col>
+          <Col span={6}>
+            <Card>
+              <Total
+                title="累计用户数"
+                value="1,292,362"
+                total={
+                  <div style={{ display: 'flex' }}>
+                    <TotalNumber text="日同比" label="up">
+                      37.01%
+                    </TotalNumber>
+                    <TotalNumber text="月同比" label="down">
+                      77.17%
+                    </TotalNumber>
+                  </div>
+                }
+              >
+                <span>chart</span>
+              </Total>
+            </Card>
+          </Col>
+        </Row>
+      </div>
+    </StyleDashboard>
+  );
+}
 
 const StyleDashboard = styled.div`
   width: 100%;
@@ -12,38 +86,19 @@ const StyleDashboard = styled.div`
   box-sizing: border-box;
   overflow: auto;
   .overview-wrapper {
+    .chart {
+      height: 50px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
   }
 `;
-
-function DatavReport() {
-  return (
-    <StyleDashboard className="dashboard">
-      <div className="overview-wrapper">
-        <Row>
-          {[{}, {}, {}, {}].map((item, i) => (
-            <Col key={i} span={6}>
-              <Card>
-                <Total
-                  title="累计销售额"
-                  value="¥ 52,344,571"
-                  total={
-                    <>
-                      昨日销售额
-                      <span data-v-e38c7be8="" className="emphasis">
-                        ¥ 30,000,000
-                      </span>
-                    </>
-                  }
-                >
-                  <span>chart</span>
-                </Total>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </div>
-    </StyleDashboard>
-  );
-}
-
 export default DatavReport;
