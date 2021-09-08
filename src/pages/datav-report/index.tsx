@@ -4,8 +4,11 @@ import { Row, Col, Card } from '../../z-ui';
 
 import Total from './component/Total';
 import TotalNumber from './component/TotalNumber';
+import pluginFactory from '../../plugin/singleton';
 
 function DatavReport() {
+  const lineChart = pluginFactory().get('line');
+
   return (
     <StyleDashboard className="dashboard">
       <div className="overview-wrapper">
@@ -37,7 +40,7 @@ function DatavReport() {
                 value="2,631,187"
                 total={<TotalNumber text="昨日订单量"> 20,000,000</TotalNumber>}
               >
-                <span>chart</span>
+                {lineChart.chart}
               </Total>
             </Card>
           </Col>

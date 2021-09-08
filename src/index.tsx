@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from './router';
+import initEChartPlugin from './plugin/initEChartPlugin';
+
 import reportWebVitals from './reportWebVitals';
+import Router from './router';
 import './style/index.scss';
+
+// 初始化eachrt插件
+initEChartPlugin();
 
 ReactDOM.render(
   <React.StrictMode>
