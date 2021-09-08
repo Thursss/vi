@@ -58,13 +58,13 @@ function DatavReport() {
                 title="累计用户数"
                 value="1,292,362"
                 total={
-                  <div style={{ display: 'flex' }}>
-                    <TotalNumber text="日同比" label="up">
+                  <div className="total-container">
+                    <StyleTotalNumber text="日同比" label="up">
                       37.01%
-                    </TotalNumber>
-                    <TotalNumber text="月同比" label="down">
+                    </StyleTotalNumber>
+                    <StyleTotalNumber text="月同比" label="down">
                       77.17%
-                    </TotalNumber>
+                    </StyleTotalNumber>
                   </div>
                 }
               >
@@ -99,6 +99,14 @@ const StyleDashboard = styled.div`
       -ms-flex-pack: center;
       justify-content: center;
     }
+    .total-container {
+      display: flex;
+    }
   }
 `;
+
+const StyleTotalNumber = styled(TotalNumber)`
+  margin-right: 10px;
+`;
+
 export default DatavReport;

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 interface TotalProps {
@@ -7,7 +7,7 @@ interface TotalProps {
   total?: ReactNode;
 }
 
-const Total: FC<TotalProps> = (props) => {
+const Total: FC<TotalProps & HTMLAttributes<HTMLElement>> = (props) => {
   const { title, value, children, total } = props;
   return (
     <div className="total-wrapper">

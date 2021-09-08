@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 
 interface TotalNumberProps {
@@ -7,7 +7,7 @@ interface TotalNumberProps {
   label?: 'up' | 'down' | 'left' | 'right';
 }
 
-const TotalNumber: FC<TotalNumberProps> = ({
+const TotalNumber: FC<TotalNumberProps & HTMLAttributes<HTMLElement>> = ({
   text,
   number,
   label,
@@ -29,7 +29,6 @@ const StyleSales = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;
-  padding-right: 10px;
   .number {
     margin-left: 5px;
     font-weight: bold;
