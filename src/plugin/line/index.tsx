@@ -1,18 +1,20 @@
+import { ReactNode } from 'react';
+
 import pluginFactory from '../singleton';
 import Register from '../singleton/Register';
 import defaultProps from './defaultProps';
-import { EChartsLinePluginProps } from '../type';
+import { EChartsLinePluginProps, PieTransformedProps } from './type';
 
 class EChartsLinePlugin {
   plugin: Register;
   description: string;
-  chart?: any;
+  chart: (transformProps: PieTransformedProps) => any;
   constructor(props?: EChartsLinePluginProps) {
     this.plugin = pluginFactory();
     props = { ...defaultProps, ...(props ?? {}) };
     const { description, chart } = props;
     this.description = description;
-    this.chart = chart();
+    this.chart = chart;
   }
 
   configure(key: string) {

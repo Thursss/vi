@@ -1,9 +1,9 @@
-import { EChartsLinePluginProps } from '../type';
+import { EChartsLinePluginProps } from './type';
 import ChartLine from './chart';
 
 const defaultProps: EChartsLinePluginProps = {
   description: 'EChart pie test',
-  chart: () => ChartLine({}),
+  chart: (transformProps) => ChartLine(transformProps),
 };
 
 export default defaultProps;

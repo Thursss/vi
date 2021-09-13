@@ -1,10 +1,35 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import EChartCore from '../chart';
+import { EChartsOption } from 'echarts';
 
-const ChartLine: FC<any> = (props) => {
-  const { children, option } = props ?? {};
-  return <EChartCore width={100} height={50} echartOptions={option}></EChartCore>;
+import EChartCore from '../chart';
+import { PieTransformedProps } from './type';
+
+const ChartLine: FC<PieTransformedProps> = (props) => {
+  const { width, height, formData } = props;
+  // TODO
+  const echartOptions: EChartsOption = {
+    xAxis: {
+      type: 'category',
+      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    },
+    yAxis: {
+      type: 'value',
+    },
+    series: [
+      {
+        type: 'line',
+        data: formData,
+      },
+    ],
+  };
+  return (
+    <EChartCore
+      width={width}
+      height={height}
+      echartOptions={echartOptions}
+    ></EChartCore>
+  );
 };
 
 export default ChartLine;
