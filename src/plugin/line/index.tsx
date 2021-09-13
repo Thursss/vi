@@ -1,10 +1,7 @@
 import pluginFactory from '../singleton';
 import Register from '../singleton/Register';
-import { Base } from '../type/base';
-
-interface EChartsLinePluginProps extends Base {
-  chart?: any;
-}
+import defaultProps from './defaultProps';
+import { EChartsLinePluginProps } from '../type';
 
 class EChartsLinePlugin {
   plugin: Register;
@@ -12,14 +9,14 @@ class EChartsLinePlugin {
   chart?: any;
   constructor(props?: EChartsLinePluginProps) {
     this.plugin = pluginFactory();
-    const { description = 'EChart pie test', chart = <div>Line chart</div> } =
-      props ?? {};
+    props = { ...defaultProps, ...(props ?? {}) };
+    const { description, chart } = props;
     this.description = description;
-    this.chart = chart;
+    this.chart = chart();
   }
 
   configure(key: string) {
-    this.plugin.register(key, {
+    this.plugin.register<EChartsLinePluginProps>(key, {
       description: this.description,
       chart: this.chart,
     });

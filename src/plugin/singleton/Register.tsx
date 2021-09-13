@@ -5,7 +5,7 @@ class Register {
   constructor() {
     this.items = {};
   }
-  register(key: string, value: any) {
+  register<T>(key: string, value: T) {
     this.items[key] = value;
     return this;
   }
@@ -16,8 +16,8 @@ class Register {
   keys(): string[] {
     return Object.keys(this.items);
   }
-  get(key: string) {
-    return this.items[key];
+  get<T>(key: string) {
+    return this.items[key] as T;
   }
   clear() {
     this.items = {};

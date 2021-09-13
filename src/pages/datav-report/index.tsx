@@ -5,9 +5,14 @@ import { Row, Col, Card } from '../../z-ui';
 import Total from './component/Total';
 import TotalNumber from './component/TotalNumber';
 import pluginFactory from '../../plugin/singleton';
+import {
+  EChartsLinePluginProps,
+  EChartsPiePluginProps,
+} from '../../plugin/type';
 
 function DatavReport() {
-  const lineChart = pluginFactory().get('line');
+  const lineChart = pluginFactory().get<EChartsLinePluginProps>('line');
+  const pieChart = pluginFactory().get<EChartsPiePluginProps>('pie');
 
   return (
     <StyleDashboard className="dashboard">
@@ -40,7 +45,7 @@ function DatavReport() {
                 value="2,631,187"
                 total={<TotalNumber text="昨日订单量"> 20,000,000</TotalNumber>}
               >
-                {lineChart.chart}
+                {lineChart?.chart}
               </Total>
             </Card>
           </Col>
@@ -51,7 +56,7 @@ function DatavReport() {
                 value="308,826"
                 total={<TotalNumber text="昨日订单量"> 20,000,000</TotalNumber>}
               >
-                <span>chart</span>
+                {pieChart?.chart}
               </Total>
             </Card>
           </Col>

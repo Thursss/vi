@@ -1,10 +1,6 @@
 import pluginFactory from '../singleton';
 import Register from '../singleton/Register';
-import { Base } from '../type/base';
-
-interface EChartsPiePluginProps extends Base {
-  chart?: any;
-}
+import { EChartsPiePluginProps } from '../type';
 
 class EChartsPiePlugin {
   plugin: Register;
