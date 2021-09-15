@@ -43,7 +43,23 @@ function DatavReport() {
               >
                 {lineChart.chart({
                   height: 50,
-                  formData: [10, 23, 22, 28, 15, 7, 0],
+                  key: 'Day',
+                  value: 'SUM(AIR_TIME)',
+                  formData: [
+                    { Day: 'Friday', 'SUM(AIR_TIME)': 1943661 },
+                    { Day: 'Saturday', 'SUM(AIR_TIME)': 1798845 },
+                    { Day: 'Monday', 'SUM(AIR_TIME)': 1048653 },
+                    { Day: 'Thursday', 'SUM(AIR_TIME)': 1626157 },
+                    { Day: 'Sunday', 'SUM(AIR_TIME)': 1048653 },
+                    { Day: 'Saturday', 'SUM(AIR_TIME)': 1798845 },
+                    { Day: 'Monday', 'SUM(AIR_TIME)': 1048653 },
+                    { Day: 'Thursday', 'SUM(AIR_TIME)': 1626157 },
+                    { Day: 'Sunday', 'SUM(AIR_TIME)': 1048653 },
+                    { Day: 'Saturday', 'SUM(AIR_TIME)': 179845 },
+                    { Day: 'Monday', 'SUM(AIR_TIME)': 1048653 },
+                    { Day: 'Thursday', 'SUM(AIR_TIME)': 1626157 },
+                    { Day: 'Sunday', 'SUM(AIR_TIME)': 1048653 },
+                  ],
                 })}
               </Total>
             </Card>

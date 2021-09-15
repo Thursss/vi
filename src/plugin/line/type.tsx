@@ -6,7 +6,9 @@ export interface EChartsLinePluginProps extends Base {
 }
 
 export interface PieTransformedProps {
-  height?: number;
   width?: number;
-  formData: number[];
+  height?: number;
+  key: string;
+  value: string;
+  formData: object[];
 }

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, useEffect, ReactNode } from 'react';
 import styled from 'styled-components';
 import { EChartsOption } from 'echarts';
 
@@ -6,20 +6,41 @@ import EChartCore from '../chart';
 import { PieTransformedProps } from './type';
 
 const ChartLine: FC<PieTransformedProps> = (props) => {
-  const { width, height, formData } = props;
+  const { width, height, key, value, formData } = props;
   // TODO
   const echartOptions: EChartsOption = {
     xAxis: {
       type: 'category',
-      data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      show: false,
+      boundaryGap: false,
+      data: formData.map((item) => item[key]),
     },
     yAxis: {
       type: 'value',
+      show: false,
+    },
+    grid: {
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      width: '100%',
+      containLabel: false,
     },
     series: [
       {
         type: 'line',
-        data: formData,
+        itemStyle: {
+          opacity: 0,
+        },
+        lineStyle: {
+          opacity: 0,
+        },
+        smooth: true,
+        data: formData.map((item) => item[value]),
+        areaStyle: {
+          color: '#a64ca6',
+        },
       },
     ],
   };
@@ -30,6 +51,11 @@ const ChartLine: FC<PieTransformedProps> = (props) => {
       echartOptions={echartOptions}
     ></EChartCore>
   );
+};
+
+ChartLine.defaultProps = {
+  key: 'key',
+  value: 'value',
 };
 
 export default ChartLine;
