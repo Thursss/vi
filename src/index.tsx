@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import initEChartPlugin from './plugin/initEChartPlugin';
+import { initEChartPlugin } from './plugin';
 
 import reportWebVitals from './reportWebVitals';
 import Router from './router';
