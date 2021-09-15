@@ -1,7 +1,7 @@
 import pluginFactory from '../singleton';
 import Register from '../singleton/Register';
 import { EChartsPiePluginProps } from '../type';
-
+import { EchartTypes } from '../type';
 class EChartsPiePlugin {
   plugin: Register;
   description: string;
@@ -14,7 +14,7 @@ class EChartsPiePlugin {
     this.chart = chart;
   }
 
-  configure(key: string) {
+  configure(key: EchartTypes) {
     this.plugin.register(key, {
       description: this.description,
       chart: this.chart,

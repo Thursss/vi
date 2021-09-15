@@ -3,22 +3,20 @@ import { ReactNode } from 'react';
 import pluginFactory from '../singleton';
 import Register from '../singleton/Register';
 import defaultProps from './defaultProps';
-import { EChartsLinePluginProps, PieTransformedProps } from './type';
+import { EChartsLinePluginProps, LineTransformedProps } from './type';
+import { EchartTypes } from '../type';
 
 class EChartsLinePlugin {
-  plugin: Register;
   description: string;
-  chart: (transformProps: PieTransformedProps) => any;
+  chart: (transformProps: LineTransformedProps) => any;
   constructor(props?: EChartsLinePluginProps) {
-    this.plugin = pluginFactory();
-    props = { ...defaultProps, ...(props ?? {}) };
-    const { description, chart } = props;
-    this.description = description;
-    this.chart = chart;
+    props = { ...defaultProps, ...(props ?? {}) } as EChartsLinePluginProps;
+    this.description = props.description;
+    this.chart = props.chart;
   }
 
-  configure(key: string) {
-    this.plugin.register<EChartsLinePluginProps>(key, {
+  configure(key: EchartTypes) {
+    pluginFactory().register<EChartsLinePluginProps>(key, {
       description: this.description,
       chart: this.chart,
     });

@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { EChartsOption } from 'echarts';
 
 import EChartCore from '../chart';
-import { PieTransformedProps } from './type';
+import { LineTransformedProps } from './type';
 
-const ChartLine: FC<PieTransformedProps> = (props) => {
+const ChartLine: FC<LineTransformedProps> = (props) => {
   const { width, height, key, value, formData } = props;
   // TODO
   const echartOptions: EChartsOption = {

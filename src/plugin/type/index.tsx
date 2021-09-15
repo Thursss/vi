@@ -19,3 +19,5 @@ export interface Base {
 export interface EChartsPiePluginProps extends Base {
   chart?: any;
 }
+
+export type EchartTypes = 'line' | 'bar' | 'pie';
