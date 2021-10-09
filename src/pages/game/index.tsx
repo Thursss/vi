@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Board from './board';
+import Board from './Board';
 import './game.scss';
 
 const Game: FC<any> = () => {
