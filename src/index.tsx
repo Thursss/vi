@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { initEChartPlugin } from './plugin';
-
 import reportWebVitals from './reportWebVitals';
 import Router from './router';
-import './style/index.scss';
+import 'z-ui/build/index.css';
 
 // 初始化eachrt插件
 initEChartPlugin();
