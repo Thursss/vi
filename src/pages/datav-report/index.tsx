@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col, Card } from 'z-ui';
-import pluginFactory, { EChartsLinePluginProps } from '../../plugin';
+import pluginFactory, { EChartsLinePluginProps } from 'z-chart';
 
 import Total from './component/Total';
 import TotalNumber from './component/TotalNumber';

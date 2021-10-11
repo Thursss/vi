@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { initEChartPlugin } from './plugin';
+import { initEChartPlugin } from 'z-chart';
 import reportWebVitals from './reportWebVitals';
 import Router from './router';
 import 'z-ui/build/index.css';
+import './style/index.scss';
 
 // 初始化eachrt插件
 initEChartPlugin();
